@@ -6,7 +6,7 @@ use regex::Regex;
 use rayon::prelude::*;
 use colored::*;
 
-// Compromised packages list (Sonatype 2025-003716/003727)
+// Compromised packages list (Sonatype 2025-003716/003727 + S1ngularity NX "Shai Hulud" worm)
 static COMPROMISED_PACKAGES: &[(&str, &str)] = &[
     // Main attack - Sonatype incident
     ("chalk", "5.6.1"),
@@ -37,6 +37,14 @@ static COMPROMISED_PACKAGES: &[(&str, &str)] = &[
     ("@duckdb/duckdb-wasm", "1.29.2"),
     ("@duckdb/node-bindings", "1.3.3"),
     ("@coveops/abi", "2.0.1"),
+    // S1ngularity NX attack - September 16, 2025 ("Shai Hulud" worm)
+    ("@ctrl/tinycolor", "*"),
+    ("@crowdstrike/foundry-js", "*"),
+    ("@nativescript-community/sqlite", "*"),
+    ("@operato/board", "*"),
+    ("@things-factory/email-base", "*"),
+    ("ngx-bootstrap", "*"),
+    ("ngx-toastr", "*"),
 ];
 
 // Expanded malware indicators

@@ -4,13 +4,16 @@ A Rust-based tool for scanning npm projects and detecting potentially malicious 
 
 ## Background
 
-This tool was created in response to the major npm supply chain attack that occurred on September 8, 2025, which compromised 18+ popular packages with over 2.6 billion weekly downloads including `chalk`, `debug`, and `ansi-styles`.
+This tool was created in response to multiple major npm supply chain attacks in September 2025:
 
-The attack injected cryptocurrency wallet-stealing malware that would swap wallet addresses during transactions. While detected and resolved within 2.5 hours, it highlighted the critical need for automated supply chain security scanning tools.
+**September 8, 2025 - Initial Supply Chain Attack**: Compromised 18+ popular packages with over 2.6 billion weekly downloads including `chalk`, `debug`, and `ansi-styles`. The attack injected cryptocurrency wallet-stealing malware that would swap wallet addresses during transactions. While detected and resolved within 2.5 hours, it highlighted the critical need for automated supply chain security scanning tools.
+
+**September 16, 2025 - S1ngularity NX "Shai Hulud" Worm Attack**: A more sophisticated worm-like attack that automatically steals secrets, runs credential harvesting tools, creates malicious GitHub Actions, and attempts to make repositories public while propagating by re-publishing itself to other packages. This attack targeted packages including `@ctrl/tinycolor`, `@crowdstrike/foundry-js`, `ngx-bootstrap`, and others.
 
 **Key References:**
-- [Sonatype Security Report](https://www.sonatype.com/blog/npm-chalk-and-debug-packages-hit-in-software-supply-chain-attack) - Detailed analysis of the supply chain attack
+- [Sonatype Security Report](https://www.sonatype.com/blog/npm-chalk-and-debug-packages-hit-in-software-supply-chain-attack) - Detailed analysis of the September 8th supply chain attack
 - [Wiz Security Analysis](https://www.wiz.io/blog/widespread-npm-supply-chain-attack-breaking-down-impact-scope-across-debug-chalk) - Technical breakdown with IOCs and detection methods
+- [Aikido Security Report](https://www.aikido.dev/blog/s1ngularity-nx-attackers-strike-again) - Analysis of the September 16th S1ngularity NX "Shai Hulud" worm attack
 - [Chalk Issue #656](https://github.com/chalk/chalk/issues/656) - Official incident report from chalk maintainers
 - [Debug Issue #1005](https://github.com/debug-js/debug/issues/1005) - Official incident report from debug maintainers
 
@@ -48,7 +51,7 @@ cargo build --release
 
 ```
 🔍 NPM Malware Scanner - Rust Edition
-📦 Scanning for 27 compromised packages
+📦 Scanning for 34 compromised packages
 🔍 Scanning for 30 malware indicators
 📁 Scanning: "/path/to/projects"
 ============================================================
